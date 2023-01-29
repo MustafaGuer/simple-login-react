@@ -48,19 +48,17 @@ const Login = (props) => {
   //   return () => {
   //     console.log("EFFECT CLEANUP");
   //   };
-  // });
+  // }, []);
 
   const { isValid: emailIsValid } = emailState;
   // const { isValid: passwordIsValid } = passwordState;
 
   useEffect(() => {
     const identifier = setTimeout(() => {
-      console.log('EFFECT');
       setFormIsValid(emailIsValid && passwordState.isValid);
     }, 500);
 
     return () => {
-      console.log('CLEANUP');
       clearTimeout(identifier);
     };
   }, [emailIsValid, passwordState.isValid]);
