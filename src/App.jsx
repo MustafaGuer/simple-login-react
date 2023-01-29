@@ -5,8 +5,9 @@ import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import AuthContext from "./store/auth-context";
 
-function App(props) {
+function App() {
   const authCtx = useContext(AuthContext);
+
   return (
     <React.Fragment>
       <MainHeader />
