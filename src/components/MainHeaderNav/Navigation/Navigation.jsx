@@ -3,7 +3,7 @@ import AuthContext from "../../../store/auth-context";
 import styles from "./Navigation.module.css";
 
 const Navigation = (props) => {
-  const ctx = useContext(AuthContext);
+  const authCtx = useContext(AuthContext);
 
   return (
     // <AuthContext.Consumer>
@@ -11,20 +11,20 @@ const Navigation = (props) => {
     // return (
     <nav className={styles.nav}>
       <ul>
-        {ctx.isLoggedIn && (
+        {authCtx.isLoggedIn && (
           <li>
             <a href="/">Users</a>
           </li>
         )}
-        {ctx.isLoggedIn && (
+        {authCtx.isLoggedIn && (
           <li>
             <a href="/">Admin</a>
           </li>
         )}
-        {ctx.isLoggedIn && (
+        {authCtx.isLoggedIn && (
           <li>
             {/* <button onClick={props.onLogout}>Logout</button> */}
-            <button onClick={ctx.onLogout}>Logout</button>
+            <button onClick={authCtx.onLogout}>Logout</button>
           </li>
         )}
       </ul>
